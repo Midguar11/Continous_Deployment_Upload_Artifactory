@@ -21,7 +21,7 @@ pipeline {
         
             stage('Upload War File to Artifactory'){
             steps{
-                sh 'mecho uploaded War file to Artifactory'
+                sh 'echo uploaded War file to Artifactory'
             }
         }
 
