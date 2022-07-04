@@ -24,13 +24,7 @@ pipeline {
                 sh 'mecho uploaded War file to Artifactory'
             }
         }
-
-                stage('Upload War File to Artifactory'){
-            steps{
-                sh 'mecho uploaded War file to Artifactory'
-            }
-        }
-
+        
         stage('Maven Deploy in docker '){
             steps{
              sh '''alias docker=\'sudo docker\'
