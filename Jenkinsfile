@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Git Clone'){
             steps{
-                git branch: 'CI_01', url: 'https://github.com/Midguar11/Continous_Deployment_Upload_Artifactory.git'
+                git branch: 'main', url: 'https://github.com/Midguar11/Continous_Deployment_Upload_Artifactory.git'
             }
         }
         
@@ -24,7 +24,7 @@ pipeline {
                 sh 'mecho uploaded War file to Artifactory'
             }
         }
-        
+
         stage('Maven Deploy in docker '){
             steps{
              sh '''alias docker=\'sudo docker\'
