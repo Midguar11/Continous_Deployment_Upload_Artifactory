@@ -19,6 +19,18 @@ pipeline {
             }
         }
         
+            stage('Upload War File to Artifactory'){
+            steps{
+                sh 'mecho uploaded War file to Artifactory'
+            }
+        }
+
+                stage('Upload War File to Artifactory'){
+            steps{
+                sh 'mecho uploaded War file to Artifactory'
+            }
+        }
+
         stage('Maven Deploy in docker '){
             steps{
              sh '''alias docker=\'sudo docker\'
@@ -26,7 +38,7 @@ sudo rm -rf dockerimg
 docker rm -f tomcatwebserver
 mkdir dockerimg 
 cd dockerimg
-cp /var/lib/jenkins/workspace/Practice/Continous_Deployment/target/helloworld-0.0.1.war .
+cp /var/lib/jenkins/workspace/Practice/Artifactory_Upload/target/helloworld-0.0.1.war .
 touch dockerfile
 cat<<EOT>>dockerfile
 FROM tomcat
